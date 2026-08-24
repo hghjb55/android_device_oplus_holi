@@ -102,3 +102,4 @@ TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_LOGICAL := my_product my_engineering my_company my_carrier my_region my_heytap my_stock my_preload my_manifest my_bigball
 TW_DEVICE_VERSION := By-xxxxx11
 TARGET_USES_UEFI ：= true
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone34/temp"
