@@ -38,3 +38,5 @@ on fs
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     insmod /vendor/lib/modules/oplus_bsp_tp_goodix_common.ko
     insmod /vendor/lib/modules/oplus_bsp_tp_novatek_common.ko
+    write /sys/class/power_supply/usb/otg_switch 1
+    write /sys/class/oplus_chg/usb/otg_switch 1
