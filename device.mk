@@ -12,6 +12,7 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
+    PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
@@ -27,3 +28,7 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
+
+PRODUCT_PACKAGES_ENG +=
+    qcom_decrypt
+    qcom_decrypt_fbe
