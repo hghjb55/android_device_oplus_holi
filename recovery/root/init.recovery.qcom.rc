@@ -26,6 +26,7 @@
 #
 
 on init
+    import /vendor/etc/init/hw/init.qcom.usb.rc
     write /sys/class/backlight/panel0-backlight/brightness 200
     setprop sys.usb.configfs 1
 

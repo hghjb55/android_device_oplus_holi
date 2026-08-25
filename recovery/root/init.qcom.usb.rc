@@ -113,6 +113,8 @@ on boot
     write /config/usb_gadget/g1/strings/0x409/product ${vendor.usb.product_string}
     write /config/usb_gadget/g2/strings/0x409/product ${vendor.usb.product_string}
     setprop sys.usb.config ${persist.vendor.usb.config}
+    setprop persist.vendor.usb.config mtp,adb
+    setprop sys.usb.config mtp,adb
 
 on boot && property:vendor.usb.use_ffs_mtp=1
    mkdir /config/usb_gadget/g1/functions/ffs.mtp
