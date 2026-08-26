@@ -68,4 +68,3 @@
 /ablbak                  emmc      /dev/block/bootdevice/by-name/ablbak            flags=display=ablbak
 /xbl                     emmc      /dev/block/bootdevice/by-name/xbl               flags=display=xbl
 /xblbak                  emmc      /dev/block/bootdevice/by-name/xblbak            flags=display=xblbak
-/usb_otg atuo /dev/block/sdd1 /dev/block/sdd flags=display="USB-Storage";storage;wipeingui;removable;fsflags="utf8"
