@@ -27,8 +27,3 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
-
-PRODUCT_PACKAGES_ENG +=
-    qcom_decrypt
-    qcom_decrypt_fbe
-
