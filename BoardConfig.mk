@@ -54,9 +54,6 @@ TARGET_FORCE_PREBUILT_KERNEL := true
 ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 endif
-#BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
-    #$(DEVICE_PATH)/recovery/root/vendor/lib/modules/oplus_bsp_tp_goodix_common.ko \
-    #$(DEVICE_PATH)/recovery/root/vendor/lib/modules/oplus_bsp_tp_novatek_common.ko
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 167772160
@@ -107,5 +104,4 @@ TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone34/temp"
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
 TW_PREPARE_DATA_MEDIA_EARLY := true
-TW_HAVE_SELINUX := true
-TW_CUSTOM_CLOCK_POS := 400
+TW_CUSTOM_CLOCK_POS := 450
