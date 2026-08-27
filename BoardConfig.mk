@@ -102,6 +102,5 @@ TW_DEVICE_VERSION := By-xxxxx11
 TARGET_USES_UEFI ：= true
 TW_INCLUDE_FASTBOOTD := true
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone34/temp"
-TW_INCLUDE_CRYPTO_FBE := true
 TW_CUSTOM_CLOCK_POS := 550
 TW_HAS_EDL_MODE  := true
