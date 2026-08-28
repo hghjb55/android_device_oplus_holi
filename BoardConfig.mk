@@ -98,7 +98,6 @@ TW_INCLUDE_MTP := true
 TW_DEFAULT_LANGUAGE := zh_CN
 TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_F2FS_EXFAT := true
-TW_DEVICE_VERSION := By-xxxxx11
 TARGET_USES_UEFI ：= true
 TW_INCLUDE_FASTBOOTD := true
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone34/temp"
