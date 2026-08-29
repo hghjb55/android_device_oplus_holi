@@ -17,9 +17,9 @@ $(call inherit-product, device/qualcomm/holi/device.mk)
 
 PRODUCT_DEVICE := holi
 PRODUCT_NAME := omni_holi
-PRODUCT_BRAND := qti
-PRODUCT_MODEL := Holi for arm64
-PRODUCT_MANUFACTURER := qualcomm
+PRODUCT_BRAND := OPPO
+PRODUCT_MODEL := PHS110
+PRODUCT_MANUFACTURER := OPPO
 
 PRODUCT_GMS_CLIENTID_BASE := android-qualcomm
 
