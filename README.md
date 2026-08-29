@@ -1,4 +1,4 @@
-# Android device tree for qti Holi for arm64 (holi)
+# Android device tree for OPPO A1 5G for arm64 (holi)
 
 ```
 #
