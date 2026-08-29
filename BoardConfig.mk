@@ -76,6 +76,30 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+TARGET_RECOVERY_DEVICE_MODULES += \
+    android.hidl.allocator@1.0 \
+    android.hidl.memory@1.0 \
+    android.hidl.memory.token@1.0 \
+    libdmabufheap \
+    libhidlmemory \
+    libion \
+    libnetutils \
+    vendor.display.config@1.0 \
+    vendor.display.config@2.0 \
+    libdebuggerd_client
+
+RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.allocator@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory.token@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libdmabufheap.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libhidlmemory.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libnetutils.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libdebuggerd_client.so \
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
+
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-08-01
 
@@ -98,10 +122,14 @@ TW_INCLUDE_MTP := true
 TW_DEFAULT_LANGUAGE := zh_CN
 TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_F2FS_EXFAT := true
-TARGET_USES_UEFI ：= true
 TW_INCLUDE_FASTBOOTD := true
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone34/temp"
 TW_CUSTOM_CLOCK_POS := 580
 TW_HAS_EDL_MODE  := true
-TW_PREPARE_DATA_MEDIA_EARLY := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
+TW_EXCLUDE_TWRPAPP := true
+
+# Crypto
+BOARD_USES_QCOM_FBE_DECRYPTION := true
+TW_PREPARE_DATA_MEDIA_EARLY := true
+BOARD_USES_METADATA_PARTITION := true
