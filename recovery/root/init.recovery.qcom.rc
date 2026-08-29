@@ -26,6 +26,7 @@
 #
 
 
+import /init.recovery.qcom_decrypt.rc
 import /vendor/etc/init/hw/init.qcom.usb.rc
 
 
