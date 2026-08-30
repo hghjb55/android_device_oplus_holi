@@ -150,7 +150,13 @@ TW_INCLUDE_FUSE_NTFS        := true
 TW_INCLUDE_NTFS_3G          := true
 TW_ENABLE_ALL_PARTITION_TOOLS := true
 
+# USB
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
+
 # Crypto
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 TW_PREPARE_DATA_MEDIA_EARLY := true
 BOARD_USES_METADATA_PARTITION := true
+
+# DeBug
+TWRP_EVENT_LOGGING:= true
