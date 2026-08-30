@@ -13,11 +13,24 @@ ALLOW_MISSING_DEPENDENCIES := true
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
-    product \
-    system_ext \
-    vendor \
-    system \
-    odm
+    boot \
+    vendor_boot \
+    dtbo \
+    vbmeta \
+    super \
+
+# AB partitions for oplus
+AB_OTA_PARTITIONS += \
+    my_bigball \
+    my_carrier \
+    my_company \
+    my_engineering \
+    my_heytap \
+    my_manifest \
+    my_preload \
+    my_product \
+    my_region \
+    my_stock
 BOARD_USES_RECOVERY_AS_BOOT := true
 
 # Architecture
@@ -40,12 +53,11 @@ DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := holi
-TARGET_NO_BOOTLOADER := true
 
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_KERNEL_IMAGE_NAME := kernel
 TARGET_KERNEL_CONFIG := holi_defconfig
 TARGET_KERNEL_SOURCE := kernel/qualcomm/holi
 
@@ -65,7 +77,8 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
 BOARD_SUPER_PARTITION_SIZE := 9126805504 # TODO: Fix hardcoded value
 BOARD_SUPER_PARTITION_GROUPS := qualcomm_dynamic_partitions
-BOARD_QUALCOMM_DYNAMIC_PARTITIONS_PARTITION_LIST := system system system_ext system_ext product product vendor vendor odm odm my_product my_product my_company my_company my_carrier my_carrier my_region my_region my_bigball my_bigball my_heytap my_heytap my_stock my_stock my_preload my_preload my_manifest my_manifest my_engineering my_engineering
+BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext product vendor odm
+BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST += my_bigball my_carrier my_company my_engineering my_heytap my_manifest my_preload my_product my_region my_stock
 BOARD_QUALCOMM_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 
 # Platform
@@ -100,6 +113,8 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
 
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
+
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-08-01
 
@@ -113,21 +128,27 @@ VENDOR_SECURITY_PATCH := 2099-12-31
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
-TW_EXTRA_LANGUAGES := true
-TW_SCREEN_BLANK_ON_BOOT := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_USE_TOOLBOX := true
-TW_INCLUDE_REPACKTOOLS := true
-TW_INCLUDE_MTP := true
-TW_DEFAULT_LANGUAGE := zh_CN
-TW_INCLUDE_NTFS_3G := true
-TW_INCLUDE_F2FS_EXFAT := true
-TW_INCLUDE_FASTBOOTD := true
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone34/temp"
-TW_CUSTOM_CLOCK_POS := 580
-TW_HAS_EDL_MODE  := true
+TW_CUSTOM_CLOCK_POS        := 580
+TW_DEFAULT_LANGUAGE        := zh_CN
+TW_CUSTOM_CPU_TEMP_PATH    := "/sys/class/thermal/thermal_zone34/temp"
+TW_EXCLUDE_TWRPAPP         := true
+TW_EXTRA_LANGUAGES         := true
+TW_HAS_EDL_MODE            := true
+TW_INPUT_BLACKLIST         := "hbtp_vm"
+TW_INCLUDE_REPACKTOOLS     := true
+TW_INCLUDE_MTP             := true
+TW_INCLUDE_FASTBOOTD       := true
+TW_INCLUDE_REPACKTOOLS     := true
+TW_SCREEN_BLANK_ON_BOOT    := true
+TW_USE_TOOLBOX             := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
-TW_EXCLUDE_TWRPAPP := true
+
+# TWRP file system
+TARGET_USES_MKE2FS          := true
+TW_INCLUDE_FUSE_EXFAT       := true
+TW_INCLUDE_FUSE_NTFS        := true
+TW_INCLUDE_NTFS_3G          := true
+TW_ENABLE_ALL_PARTITION_TOOLS := true
 
 # Crypto
 BOARD_USES_QCOM_FBE_DECRYPTION := true
