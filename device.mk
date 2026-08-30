@@ -37,3 +37,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # fastbootd
 PRODUCT_PACKAGES += fastbootd
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
+
