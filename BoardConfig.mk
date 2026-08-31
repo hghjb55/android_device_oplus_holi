@@ -167,7 +167,9 @@ TW_USE_FSCRYPT_POLICY           := 2
 TW_LOAD_VENDOR_MODULES := \
     "oplus_bsp_tp_ilitek7807s.ko \
      oplus_bsp_tp_common.ko \
-     oplus_bsp_tp_notify.ko"
+     oplus_bsp_tp_notify.ko \
+     oplus_bsp_tp_custom.ko \
+     oplus_bsp_tp_ilitek_common.ko"
 
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
