@@ -64,8 +64,6 @@ TARGET_FORCE_PREBUILT_KERNEL := true
 ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 endif
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
-    $(DEVICE_PATH)/recovery/root/vendor/lib/modules/oplus_bsp_tp_ilitek7807s.ko
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 167772160
@@ -164,6 +162,14 @@ TW_PREPARE_DATA_MEDIA_EARLY     := true
 BOARD_USES_METADATA_PARTITION   := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 TW_USE_FSCRYPT_POLICY           := 2
+
+# touch
+TW_LOAD_VENDOR_MODULES := \
+    "oplus_bsp_tp_ilitek7807s.ko \
+     oplus_bsp_tp_common.ko \
+     oplus_bsp_tp_notify.ko"
+
+TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
 # Debug
 TWRP_EVENT_LOGGING:= true
