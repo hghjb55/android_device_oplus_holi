@@ -73,9 +73,9 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
 BOARD_SUPER_PARTITION_SIZE := 9126805504
 BOARD_SUPER_PARTITION_GROUPS := qualcomm_dynamic_partitions
-BOARD_QUALCOMM_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext product vendor odm
+BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext product vendor odm
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST += my_bigball my_carrier my_company my_engineering my_heytap my_manifest my_preload my_product my_region my_stock
-BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9122611200
+BOARD_QUALCOMM_DYNAMIC_PARTITIONS_SIZE := 9122611200
 
 # Platform
 TARGET_BOARD_PLATFORM := holi
