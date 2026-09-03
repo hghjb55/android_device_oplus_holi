@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_sm6375.mk
+    $(LOCAL_DIR)/omni_holi.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_sm6375-user \
-    omni_sm6375-userdebug \
-    omni_sm6375-eng
+    omni_holi-user \
+    omni_holi-userdebug \
+    omni_holi-eng
