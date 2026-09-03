@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_sm6375.mk
+    $(LOCAL_DIR)/omni_sm6375.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_sm6375-user \
-    twrp_sm6375-userdebug \
-    twrp_sm6375-eng
+    omni_sm6375-user \
+    omni_sm6375-userdebug \
+    omni_sm6375-eng
