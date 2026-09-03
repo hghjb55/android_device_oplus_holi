@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # Building with minimal manifest
-DEVICE_PATH := device/oplus/sm6375
+DEVICE_PATH := device/oplus/holi
 
 BUILD_BROKEN_DUP_RULES                          := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES    := true
