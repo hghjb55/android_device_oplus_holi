@@ -75,7 +75,6 @@ TARGET_BOOTLOADER_BOARD_NAME    := holi
 # Kernel/Ramdisk
 BOARD_BOOT_HEADER_VERSION   := 4
 BOARD_MKBOOTIMG_ARGS        += --header_version $(BOARD_BOOT_HEADER_VERSION)
-BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE    := true
 BOARD_KERNEL_IMAGE_NAME     := kernel
 BOARD_RAMDISK_USE_LZ4       := true
 TARGET_HAS_GENERIC_KERNEL_HEADERS := true
@@ -169,7 +168,7 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_DEFAULT_LANGUAGE       := zh_CN
 
 # TWRP extras
-TW_CUSTOM_CPU_TEMP_PATH        := "/sys/class/thermal/thermal_zone34/temp"
+TW_CUSTOM_CPU_TEMP_PATH         := "/sys/class/thermal/thermal_zone34/temp"
 TW_EXCLUDE_APEX                 := true
 TW_EXCLUDE_DEFAULT_USB_INIT     := true
 TW_EXTRA_LANGUAGES              := true
