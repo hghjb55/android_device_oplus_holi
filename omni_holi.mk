@@ -13,17 +13,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from holi device
-$(call inherit-product, device/qualcomm/holi/device.mk)
+$(call inherit-product, $(DEVICE_PATH)/device.mk)
 
-PRODUCT_DEVICE := holi
-PRODUCT_NAME := omni_holi
+PRODUCT_DEVICE := sm6375
+PRODUCT_NAME := twrp-sm6375
 PRODUCT_BRAND := OPPO
 PRODUCT_MODEL := PHS110
 PRODUCT_MANUFACTURER := OPPO
-
-PRODUCT_GMS_CLIENTID_BASE := android-qualcomm
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="holi-user 12 RKQ1.211119.001 1702896547592 release-keys"
-
-BUILD_FINGERPRINT := qti/holi/holi:12/RKQ1.211119.001/1702896547592:user/release-keys
