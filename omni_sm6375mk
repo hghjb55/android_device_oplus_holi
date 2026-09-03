@@ -16,7 +16,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 PRODUCT_DEVICE := sm6375
-PRODUCT_NAME := twrp_sm6375
+PRODUCT_NAME := omni_sm6375
 PRODUCT_BRAND := OPPO
 PRODUCT_MODEL := PHS110
 PRODUCT_MANUFACTURER := OPPO
