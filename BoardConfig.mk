@@ -164,12 +164,7 @@ TW_INCLUDE_FBE_METADATA_DECRYPT := true
 TW_USE_FSCRYPT_POLICY           := 2
 
 # touch
-TW_LOAD_VENDOR_MODULES := \
-    "oplus_bsp_tp_ilitek7807s.ko \
-     oplus_bsp_tp_common.ko \
-     oplus_bsp_tp_notify.ko \
-     oplus_bsp_tp_custom.ko \
-     oplus_bsp_tp_ilitek_common.ko"
+TW_LOAD_VENDOR_MODULES := "oplus_bsp_ir_core.ko oplus_bsp_kookong_ir_spi.ko oplus_bsp_midas.ko oplus_bsp_tp_comon.ko oplus_bsp_tp_custom.ko oplus_bsp_tp_focal_common.ko oplus_bsp_tp_ft3518.ko oplus_bsp_tp_ft3681.ko oplus_bsp_tp_goodix_comnon.ko oplus_bsp_tp_gt9886.ko oplus_bsp_tp_ilitek7807s.ko oplus_bsp_tp_ilitek_common.ko oplus_bsp_tp_notify.ko oplus_bsp_tp_novatek_common.ko oplus_bsp_tp_nt36523_noflash.ko oplus_bsp_tp_nt36672c_noflash.ko oplus_bsp_tp_syna_comnon.ko oplus_bsp_tp_tcm_S3910.ko oplus_bsp_tp_td4377_noflash.ko"
 
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
