@@ -50,11 +50,9 @@ AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS := \
     boot \
     vendor_boot \
-    vendor_dlkm \
     dtbo \
     vbmeta \
     super \
-    system_dlkm
 
 # AB partitions for oplus
 AB_OTA_PARTITIONS += \
