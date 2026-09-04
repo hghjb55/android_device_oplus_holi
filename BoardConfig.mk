@@ -143,7 +143,7 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
 TARGET_USES_MKE2FS := true
 
 # File systems
-#TW_USE_DMCTL := true
+TW_USE_DMCTL := true
 
 # AVB
 BOARD_AVB_ENABLE := true
@@ -151,11 +151,11 @@ BOARD_AVB_RECOVERY_ALGORITHM    := SHA256_RSA4096
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
-BOARD_AVB_VBMETA_SYSTEM := system
-BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
-BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
-BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
-BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
+#BOARD_AVB_VBMETA_SYSTEM := system
+#BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
+#BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
+#BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
+#BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
 
 # Encryption
 BOARD_USES_METADATA_PARTITION   := true
@@ -211,6 +211,10 @@ TW_ENABLE_ALL_PARTITION_TOOLS := true
 # Vendor modules to load in recovery
 TW_LOAD_VENDOR_MODULES := "oplus_bsp_ir_core.ko oplus_bsp_kookong_ir_spi.ko oplus_bsp_midas.ko oplus_bsp_tp_comon.ko oplus_bsp_tp_custom.ko oplus_bsp_tp_focal_common.ko oplus_bsp_tp_ft3518.ko oplus_bsp_tp_ft3681.ko oplus_bsp_tp_goodix_comnon.ko oplus_bsp_tp_gt9886.ko oplus_bsp_tp_ilitek7807s.ko oplus_bsp_tp_ilitek_common.ko oplus_bsp_tp_notify.ko oplus_bsp_tp_novatek_common.ko oplus_bsp_tp_nt36523_noflash.ko oplus_bsp_tp_nt36672c_noflash.ko oplus_bsp_tp_syna_comnon.ko oplus_bsp_tp_tcm_S3910.ko oplus_bsp_tp_td4377_noflash.ko"
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
+
+# USB
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
+
 
 # Version
 TW_DEVICE_VERSION := OPLUS-SM6375
