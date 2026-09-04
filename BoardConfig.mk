@@ -175,7 +175,7 @@ TARGET_RECOVERY_QCOM_RTC_FIX    := true
 # TWRP display
 TW_THEME                  := portrait_hdpi
 TW_CUSTOM_CLOCK_POS       := 580
-#TW_SCREEN_BLANK_ON_BOOT  := true
+TW_SCREEN_BLANK_ON_BOOT  := true
 TW_DEFAULT_LANGUAGE       := zh_CN
 
 # TWRP extras
@@ -189,9 +189,9 @@ TW_INCLUDE_REPACKTOOLS          := true
 TW_INCLUDE_7ZA                  := true
 TW_INCLUDE_ZSTD                 := true
 TW_NO_EXFAT_FUSE                := true
-TW_NO_SCREEN_BLANK              := true
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 TW_NO_NETWORK                   := true
+#TW_NO_SCREEN_BLANK              := true
 
 # TWRP file system
 RECOVERY_SDCARD_ON_DATA     := true
