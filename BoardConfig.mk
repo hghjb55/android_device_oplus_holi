@@ -112,6 +112,8 @@ TARGET_BOARD_PLATFORM   := holi
 QCOM_BOARD_PLATFORMS    += holi
 
 # Recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
+
 TARGET_RECOVERY_DEVICE_MODULES += \
     android.hidl.allocator@1.0 \
     android.hidl.memory@1.0 \
@@ -123,19 +125,32 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     vendor.display.config@1.0 \
     vendor.display.config@2.0 \
     libdebuggerd_client
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
+
+RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.allocator@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory.token@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libdmabufheap.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libhidlmemory.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libnetutils.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libdebuggerd_client.so \
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
+
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
 
 # File systems
-TW_USE_DMCTL := true
+#TW_USE_DMCTL := true
 
 # AVB
 BOARD_AVB_ENABLE := true
 BOARD_AVB_RECOVERY_ALGORITHM    := SHA256_RSA4096
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
+
 BOARD_AVB_VBMETA_SYSTEM := system
 BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
@@ -145,7 +160,6 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
 # Encryption
 BOARD_USES_METADATA_PARTITION   := true
 BOARD_USES_QCOM_FBE_DECRYPTION  := true
-TW_INCLUDE_OMAPI                := true
 
 # Security patches
 PLATFORM_VERSION                := 99.87.36
@@ -159,9 +173,9 @@ TARGET_RECOVERY_PIXEL_FORMAT    := RGBX_8888
 TARGET_RECOVERY_QCOM_RTC_FIX    := true
 
 # TWRP display
-TW_THEME                := portrait_hdpi
-TW_CUSTOM_CLOCK_POS   := 580
-TW_SCREEN_BLANK_ON_BOOT := true
+TW_THEME                  := portrait_hdpi
+TW_CUSTOM_CLOCK_POS       := 580
+#TW_SCREEN_BLANK_ON_BOOT  := true
 TW_DEFAULT_LANGUAGE       := zh_CN
 
 # TWRP extras
@@ -189,22 +203,10 @@ TW_INCLUDE_NTFS_3G          := true
 TW_ENABLE_ALL_PARTITION_TOOLS := true
 
 # TWRP override props
-TW_OVERRIDE_SYSTEM_PROPS := \
+#TW_OVERRIDE_SYSTEM_PROPS := \
     "ro.build.product;ro.build.fingerprint=ro.vendor.build.fingerprint;ro.build.version.incremental"
-TW_OVERRIDE_PROPS_ADDITIONAL_PARTITIONS := vendor
+#TW_OVERRIDE_PROPS_ADDITIONAL_PARTITIONS := vendor
 
-# Recovery libraries
-RECOVERY_LIBRARY_SOURCE_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.allocator@1.0.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory@1.0.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory.token@1.0.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libdmabufheap.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libhidlmemory.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libnetutils.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libdebuggerd_client.so \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
 
 # Vendor modules to load in recovery
 TW_LOAD_VENDOR_MODULES := "oplus_bsp_ir_core.ko oplus_bsp_kookong_ir_spi.ko oplus_bsp_midas.ko oplus_bsp_tp_comon.ko oplus_bsp_tp_custom.ko oplus_bsp_tp_focal_common.ko oplus_bsp_tp_ft3518.ko oplus_bsp_tp_ft3681.ko oplus_bsp_tp_goodix_comnon.ko oplus_bsp_tp_gt9886.ko oplus_bsp_tp_ilitek7807s.ko oplus_bsp_tp_ilitek_common.ko oplus_bsp_tp_notify.ko oplus_bsp_tp_novatek_common.ko oplus_bsp_tp_nt36523_noflash.ko oplus_bsp_tp_nt36672c_noflash.ko oplus_bsp_tp_syna_comnon.ko oplus_bsp_tp_tcm_S3910.ko oplus_bsp_tp_td4377_noflash.ko"
@@ -213,15 +215,9 @@ TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 # Version
 TW_DEVICE_VERSION := OPLUS-SM6375
 
-# Vibrator
-TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 
 # TWRP Debug
 TARGET_USES_LOGD        := true
 TWRP_INCLUDE_LOGCAT     := true
-TARGET_RECOVERY_DEVICE_MODULES += debuggerd
-RECOVERY_BINARY_SOURCE_FILES   += $(TARGET_OUT_EXECUTABLES)/debuggerd
-TARGET_RECOVERY_DEVICE_MODULES += strace
-RECOVERY_BINARY_SOURCE_FILES   += $(TARGET_OUT_EXECUTABLES)/strace
 
 # Soong namespaces
