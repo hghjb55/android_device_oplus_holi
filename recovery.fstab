@@ -70,5 +70,4 @@ odm                                        /odm                   erofs   ro    
 /dev/block/bootdevice/by-name/misc        /misc                  emmc    defaults                                                        defaults
 /dev/block/bootdevice/by-name/boot          /boot                emmc        defaults                                        flags=display=boot
 /dev/block/mmcblk1p1                       /external_sd               vfat    nosuid,nodev                                                    defaults
-/usb_otg                 vfat      /dev/block/sdg1                                 flags=display=usb_otg;storage;wipeingui;removable;fsflags="utf8"
-
+/dev/block/sdg1  /usb_otg vfat defaults flags=display=usb_otg;storage;wipeingui;removable;fsflags="utf8"
