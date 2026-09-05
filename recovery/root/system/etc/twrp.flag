@@ -1,0 +1,46 @@
+# Additional File-system Tab for TWRP
+
+# Initial Boot Process
+/boot               emmc      /dev/block/bootdevice/by-name/boot             flags=display="boot";slotselect;flashimg=1
+/vendor_boot        emmc      /dev/block/bootdevice/by-name/vendor_boot      flags=display="vendor_boot";slotselect;backup=1;flashimg=1
+/dtbo               emmc      /dev/block/bootdevice/by-name/dtbo             flags=display="dtbo";slotselect;backup=1;flashimg=1
+/modem              emmc      /dev/block/bootdevice/by-name/modem            flags=display="modem";slotselect;backup=1;flashimg=1
+/cache              ext4      /dev/block/by-name/oplusreserve2               flags=display="cache"
+/system             erofs     /dev/block/bootdevice/by-name/system           flags=display="system"
+/system_ext         erofs     /dev/block/bootdevice/by-name/system_ext       flags=display="system_ext"
+/vendor             erofs     /dev/block/bootdevice/by-name/vendor           flags=display="vendor"
+/product            ext4      /dev/block/bootdevice/by-name/product          flags=display="product"
+/odm                ext4      /dev/block/bootdevice/by-name/odm              flags=display="odm"
+
+# Verified Boot Partitions
+/vbmeta                	emmc    /dev/block/bootdevice/by-name/vbmeta                               flags=display=vbmeta";slotselect;backup=1;flashimg=1
+/vbmeta_system         	emmc    /dev/block/bootdevice/by-name/vbmeta_system                        flags=display="vbmeta_system";slotselect;backup=1;flashimg=1
+/vbmeta_vendor         	emmc    /dev/block/bootdevice/by-name/vbmeta_vendor                        flags=display="vbmeta_vendor";slotselect;backup=1;flashimg=1
+
+# External Partition
+/usbotg                 vfat      /dev/block/sdg1    /dev/block/sdg          flags=display="USB Storage";storage;wipeingui;removable
+
+# Additional Partitions
+/apdp               emmc      /dev/block/bootdevice/by-name/apdp
+/devinfo            emmc      /dev/block/bootdevice/by-name/devinfo
+/sbl1               emmc      /dev/block/bootdevice/by-name/sbl1
+/rpm                emmc      /dev/block/bootdevice/by-name/rpm
+/tz                 emmc      /dev/block/bootdevice/by-name/tz
+/modemst1           emmc      /dev/block/bootdevice/by-name/modem_st1    flags=display="modem_st1";backup=1;flashimg=1
+/modemst2           emmc      /dev/block/bootdevice/by-name/modem_st2    flags=display="modem_st2";backup=1;flashimg=1
+/static_nv_bk       emmc      /dev/block/bootdevice/by-name/oppostanvbk
+/oppodycnvbk        emmc      /dev/block/bootdevice/by-name/oppodycnvbk
+/splash             emmc      /dev/block/bootdevice/by-name/splash                    flags=display="splash";slotselect;flashimg=1
+/reserve4           emmc      /dev/block/bootdevice/by-name/reserve4
+/dsp                emmc      /dev/block/bootdevice/by-name/dsp
+/DRIVER             emmc      /dev/block/bootdevice/by-name/DRIVER
+/devcfg             emmc      /dev/block/bootdevice/by-name/devcfg
+/mdtp               emmc      /dev/block/bootdevice/by-name/mdtp
+/cmnlib             emmc      /dev/block/bootdevice/by-name/cmnlib
+/keymaster          emmc      /dev/block/bootdevice/by-name/keymaster
+/apdp               emmc      /dev/block/bootdevice/by-name/apdp
+/devinfo            emmc      /dev/block/bootdevice/by-name/devinfo
+/opporeserve        ext4      /dev/block/bootdevice/by-name/opporeserve
+/abl                emmc      /dev/block/bootdevice/by-name/abl
+/xbl                emmc      /dev/block/bootdevice/by-name/xbl
+/data              f2fs         /dev/block/bootdevice/by-name/userdata        flags=keydirectory=/metadata/vold/metadata_encryption
