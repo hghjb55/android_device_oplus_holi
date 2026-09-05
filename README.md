@@ -1,4 +1,4 @@
-# Twrp device tree for OPPO A1 5G for arm64 (holi)
+# Twrp device tree for OPPO A1 5G (holi)
 
 ```
 #
