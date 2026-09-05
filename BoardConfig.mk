@@ -190,7 +190,9 @@ TW_INCLUDE_ZSTD                 := true
 TW_NO_EXFAT_FUSE                := true
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 TW_NO_NETWORK                   := true
-#TW_NO_SCREEN_BLANK              := true
+#TW_NO_SCREEN_BLANK             := true
+TW_HAS_EDL_MODE                 := true
+TW_BATTERY_SYSFS_WAIT_SECONDS   := 6
 
 # TWRP file system
 RECOVERY_SDCARD_ON_DATA     := true
