@@ -171,58 +171,19 @@ VENDOR_SECURITY_PATCH           := $(PLATFORM_SECURITY_PATCH)
 TARGET_RECOVERY_PIXEL_FORMAT    := RGBX_8888
 TARGET_RECOVERY_QCOM_RTC_FIX    := true
 
-# TWRP display
-TW_THEME                  := portrait_hdpi
-TW_CUSTOM_CLOCK_POS       := 580
-TW_SCREEN_BLANK_ON_BOOT  := true
-TW_DEFAULT_LANGUAGE       := zh_CN
-
-# TWRP extras
-TW_CUSTOM_CPU_TEMP_PATH         := "/sys/class/thermal/thermal_zone34/temp"
-TW_EXCLUDE_APEX                 := true
-TW_EXCLUDE_DEFAULT_USB_INIT     := true
-TW_EXTRA_LANGUAGES              := true
-TW_INCLUDE_FASTBOOTD            := true
-TW_INCLUDE_RESETPROP            := true
-TW_INCLUDE_REPACKTOOLS          := true
-TW_INCLUDE_7ZA                  := true
-TW_INCLUDE_ZSTD                 := true
-TW_NO_EXFAT_FUSE                := true
-TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
-TW_NO_NETWORK                   := true
-#TW_NO_SCREEN_BLANK             := true
-TW_HAS_EDL_MODE                 := true
-TW_BATTERY_SYSFS_WAIT_SECONDS   := 6
-
-# TWRP file system
-RECOVERY_SDCARD_ON_DATA     := true
-TARGET_USES_MKE2FS          := true
-TW_ENABLE_FS_COMPRESSION    := true
-TW_INCLUDE_FUSE_EXFAT       := true
-TW_INCLUDE_FUSE_NTFS        := true
-TW_INCLUDE_NTFS_3G          := true
-TW_ENABLE_ALL_PARTITION_TOOLS := true
-
-# TWRP override props
-#TW_OVERRIDE_SYSTEM_PROPS := \
-    "ro.build.product;ro.build.fingerprint=ro.vendor.build.fingerprint;ro.build.version.incremental"
-#TW_OVERRIDE_PROPS_ADDITIONAL_PARTITIONS := vendor
-
-
-# Vendor modules to load in recovery
-TW_LOAD_VENDOR_MODULES := "oplus_bsp_ir_core.ko oplus_bsp_kookong_ir_spi.ko oplus_bsp_midas.ko oplus_bsp_tp_comon.ko oplus_bsp_tp_custom.ko oplus_bsp_tp_focal_common.ko oplus_bsp_tp_ft3518.ko oplus_bsp_tp_ft3681.ko oplus_bsp_tp_goodix_comnon.ko oplus_bsp_tp_gt9886.ko oplus_bsp_tp_ilitek7807s.ko oplus_bsp_tp_ilitek_common.ko oplus_bsp_tp_notify.ko oplus_bsp_tp_novatek_common.ko oplus_bsp_tp_nt36523_noflash.ko oplus_bsp_tp_nt36672c_noflash.ko oplus_bsp_tp_syna_comnon.ko oplus_bsp_tp_tcm_S3910.ko oplus_bsp_tp_td4377_noflash.ko"
-TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
-
-# USB
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
-
-
-# Version
-TW_DEVICE_VERSION := OPLUS-SM6375
-
-
-# TWRP Debug
-TARGET_USES_LOGD        := true
-TWRP_INCLUDE_LOGCAT     := true
-
-# Soong namespaces
+# TWRP Configuration
+TW_THEME := portrait_hdpi
+TW_EXTRA_LANGUAGES := true
+TW_SCREEN_BLANK_ON_BOOT := true
+TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_USE_TOOLBOX := true
+TW_INCLUDE_REPACKTOOLS := true
+TW_INCLUDE_MTP := true
+TW_DEFAULT_LANGUAGE := zh_CN
+TW_INCLUDE_NTFS_3G := true
+TW_INCLUDE_F2FS_EXFAT := true
+TARGET_USES_UEFI ：= true
+TW_INCLUDE_FASTBOOTD := true
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone34/temp"
+TW_CUSTOM_CLOCK_POS := 580
+TW_HAS_EDL_MODE  := true
