@@ -184,7 +184,7 @@ TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_F2FS_EXFAT := true
 TW_INCLUDE_FASTBOOTD := true
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone34/temp"
-TW_CUSTOM_CLOCK_POS := 580
+TW_CUSTOM_CLOCK_POS := 550
 TW_HAS_EDL_MODE  := true
 
 #OrangefoX
