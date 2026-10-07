@@ -51,8 +51,8 @@ AB_OTA_PARTITIONS := \
     boot \
     vendor_boot \
     dtbo \
-    vbmeta \
-    super \
+    vbmeta #\
+    #super \
 
 # AB partitions for oplus
 AB_OTA_PARTITIONS += \
@@ -136,8 +136,6 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
 
 
-# Use mke2fs to create ext4 images
-TARGET_USES_MKE2FS := true
 
 # File systems
 TW_USE_DMCTL := true
@@ -154,11 +152,6 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 #BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 #BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
 
-# Encryption
-BOARD_USES_METADATA_PARTITION   := true
-BOARD_USES_QCOM_FBE_DECRYPTION  := true
-TW_INCLUDE_FBE_METADATA_DECRYPT := true
-TW_PREPARE_DATA_MEDIA_EARLY      := true
 
 # Security patches
 PLATFORM_VERSION                := 99.87.36
@@ -172,21 +165,29 @@ TARGET_RECOVERY_PIXEL_FORMAT    := RGBX_8888
 TARGET_RECOVERY_QCOM_RTC_FIX    := true
 
 # TWRP Configuration
-TW_THEME    := portrait_hdpi
-TW_EXTRA_LANGUAGES := true
+TW_THEME                := portrait_hdpi
+TW_EXTRA_LANGUAGES      := true
 TW_SCREEN_BLANK_ON_BOOT := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_USE_TOOLBOX := true
-TW_INCLUDE_REPACKTOOLS := true
-TW_INCLUDE_MTP := true
-TW_DEFAULT_LANGUAGE := zh_CN
-TW_INCLUDE_NTFS_3G := true
-TW_INCLUDE_F2FS_EXFAT := true
-TW_INCLUDE_FASTBOOTD := true
+TW_INPUT_BLACKLIST      := "hbtp_vm"
+TW_USE_TOOLBOX          := true
+TW_INCLUDE_REPACKTOOLS  := true
+TW_INCLUDE_MTP          := true
+TW_DEFAULT_LANGUAGE     := zh_CN
+TW_INCLUDE_FASTBOOTD    := true
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone34/temp"
-TW_CUSTOM_CLOCK_POS := 550
-TW_HAS_EDL_MODE  := true
+TW_CUSTOM_CLOCK_POS     := 550
 
-#OrangefoX
-FOX_BUILD_DEVICE := holi
-FOX_BUILD_VERSION := R12.1
+# TWRP file system
+TARGET_USES_MKE2FS            := true
+TW_INCLUDE_FUSE_EXFAT         := true
+TW_INCLUDE_FUSE_NTFS          := true
+TW_INCLUDE_NTFS_3G            := true
+TW_ENABLE_ALL_PARTITION_TOOLS := true
+
+# Crypto
+BOARD_USES_QCOM_FBE_DECRYPTION  := true
+TW_PREPARE_DATA_MEDIA_EARLY     := true
+BOARD_USES_METADATA_PARTITION   := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
+BOARD_USES_METADATA_PARTITION   := true
+TW_USE_FSCRYPT_POLICY           := 2
